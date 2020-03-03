@@ -109,3 +109,36 @@ form.addEventListener('submit', getWeatherForCity);
 // })
 
 // */}
+
+// #######################################################
+{this.state.allowed && <UserLocation
+  userCity={this.state.userCity}
+  temperature={this.state.temperature}
+  minTemperature={this.state.minTemperature}
+  maxTemperature={this.state.maxTemperature}
+  country={this.state.country}
+  description={this.state.description}
+  icon={this.state.icon}
+  img={this.state.img}
+    />}
+
+<Weather
+  temperature={this.state.temperature}
+  city={this.state.city}
+  country={this.state.country}
+  description={this.state.description}
+  icon={this.state.icon}
+  error={this.state.error}
+  cityNameError={this.state.cityNameError}
+  />
+  // #################################################
+  getUserLocation= async () => {
+    let url= await fetch('http://ip-api.com/json/');
+    let data= await url.json();
+    console.log(data);
+  }
+
+
+  componentDidMount() {
+    this.getUserLocation();
+  }
