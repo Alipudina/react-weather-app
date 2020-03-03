@@ -17,6 +17,24 @@ class App extends Component {
     city: undefined
   }
 
+  // test +++++++++++++++++++++++++++++++++++
+  getLocation= async () => {
+    const fetchWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=hamburg&APPID=${authToken}`);
+
+
+    let userLocationUrl= await fetch('http://ip-api.com/json/');
+    let userLocationData= await userLocationUrl.json();
+    let userLocationCity= userLocationData.city;
+    console.log(userLocationCity);
+  }
+
+  componentDidMount() {
+    this.getLocation();
+  }
+
+
+  // +++++++++++++++++++++++++++++++++++++++++++
+
 // get weather #####################
   getWeather = async ev => {
     ev.preventDefault();
