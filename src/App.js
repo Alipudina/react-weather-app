@@ -20,7 +20,7 @@ class App extends Component {
   // test +++++++++++++++++++++++++++++++++++
   getLocation= async () => {
     const fetchWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=hamburg&APPID=${authToken}`);
-
+    const url= await fetchWeather.json();
 
     let userLocationUrl= await fetch('http://ip-api.com/json/');
     let userLocationData= await userLocationUrl.json();
