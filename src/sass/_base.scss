@@ -1,0 +1,24 @@
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  // font-family: 'Nunito', sans-serif; // 300, 300i
+  font-family: 'Josefin', sans-serif; // 300, 400, 400i
+}
+
+.formContainer {
+  background-color: lighten(#228e42, 20%);
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(#14171C, .2);
+}

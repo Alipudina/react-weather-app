@@ -1,0 +1,104 @@
+@keyframes moveToRight {
+  0% {
+    transform: translateX(-6rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// moveToTop ###################
+@keyframes moveToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.mainContainer {
+  padding: 6vw 4vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-gap: 3vw;
+  position: relative;
+  overflow: hidden;
+
+  &__userContainer {
+    background-image: linear-gradient(to right bottom, #000342, #3B7BD7);
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__flagContainer {
+    padding: 1vw;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__cityName {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 2;
+    font-size: 4rem;
+    animation: moveToRight 1s;
+    animation-fill-mode: backwards;
+  }
+
+  &__liveTemperature {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    font-size: 4rem;
+    animation: moveToRight 1s ease-out .6s;
+    animation-fill-mode: backwards;
+  }
+
+  &__minTemperature,
+  &__maxTemperature {
+    font-size: 2.5rem;
+    animation: moveToTop .7s ease-out 1s;
+    animation-fill-mode: backwards;
+  }
+
+  &__iconContainer {
+    width: 50%;
+    height: 50%;
+    animation: moveToTop .7s ease-out 1s;
+    animation-fill-mode: backwards;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__minTemperature {
+    margin-right: 2rem;
+  }
+
+  &__maxTemperature {
+
+  }
+}

@@ -1,0 +1,121 @@
+.form {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__group {
+    width: 60%;
+
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    // color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: #fff;
+    border: none;
+    border-bottom: 3px solid transparent;
+    display: block;
+    width: 100%;
+    transition: all .3s;
+    height: 100%;
+
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(#14171C, .1);
+      border-bottom: 3px solid #01BD6C;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid #ff7730;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #999;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+
+  &__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__btn {
+      font-family: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all .2s;
+      position: relative;
+      font-size: 1.8rem;
+      animation: moveToTop .5s ease-out .75s;
+      animation-fill-mode: backwards;
+      margin: auto;
+
+      border: none;
+      cursor: pointer;
+
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba(#14171C, .2);
+
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      border-radius: 10rem;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .4s;
+    }
+
+    &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba(#14171C, .2);
+    }
+
+    &-white {
+      background-color: #fff;
+      color: #228e42;
+
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+}
