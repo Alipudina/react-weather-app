@@ -18,7 +18,8 @@ body {
 .formContainer {
   background-color: #44d26e;
   border-radius: 5px;
-  box-shadow: 0 1.5rem 4rem rgba(20, 23, 28, 0.2); }
+  box-shadow: 0 1.5rem 4rem rgba(20, 23, 28, 0.2);
+  grid-column: 1 / -1; }
 
 .form {
   color: #fff;
@@ -69,6 +70,8 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     padding: 1.5rem 4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
     display: inline-block;
     border-radius: 10rem;
     transition: all .2s;

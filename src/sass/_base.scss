@@ -26,4 +26,5 @@ body {
   background-color: lighten(#228e42, 20%);
   border-radius: 5px;
   box-shadow: 0 1.5rem 4rem rgba(#14171C, .2);
+  grid-column: 1 / -1;
 }
