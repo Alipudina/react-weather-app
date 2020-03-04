@@ -8,6 +8,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 600px) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: 'Josefin', sans-serif; }
@@ -73,9 +76,12 @@ body {
     font-size: 1.8rem;
     animation: moveToTop .5s ease-out .75s;
     animation-fill-mode: backwards;
-    margin: auto;
     border: none;
     cursor: pointer; }
+    @media only screen and (max-width: 900px) {
+      .form__btn {
+        font-size: 1.5rem;
+        padding: 1.3rem 2rem; } }
     .form__btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 1rem 2rem rgba(20, 23, 28, 0.2); }
@@ -126,6 +132,13 @@ body {
   grid-gap: 3vw;
   position: relative;
   overflow: hidden; }
+  @media only screen and (max-width: 900px) {
+    .mainContainer {
+      padding: 6vw 3vw;
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr)); } }
+  @media only screen and (max-width: 600px) {
+    .mainContainer {
+      padding: 6vw 3vw; } }
   .mainContainer__userContainer {
     background-image: linear-gradient(to right bottom, #000342, #3B7BD7);
     color: #fff;
@@ -138,6 +151,12 @@ body {
     justify-items: center; }
   .mainContainer__flagContainer {
     padding: 1vw; }
+    @media only screen and (max-width: 900px) {
+      .mainContainer__flagContainer {
+        padding: 1.5vw; } }
+    @media only screen and (max-width: 600px) {
+      .mainContainer__flagContainer {
+        padding: 2vw; } }
     .mainContainer__flagContainer img {
       width: 100%;
       height: 100%;

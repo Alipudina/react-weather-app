@@ -74,10 +74,13 @@
       font-size: 1.8rem;
       animation: moveToTop .5s ease-out .75s;
       animation-fill-mode: backwards;
-      margin: auto;
-
       border: none;
       cursor: pointer;
+
+      @media only screen and (max-width: 900px){
+          font-size: 1.5rem;
+          padding: 1.3rem 2rem;
+        }
 
 
     &:hover {

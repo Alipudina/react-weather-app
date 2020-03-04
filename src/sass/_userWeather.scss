@@ -33,6 +33,15 @@
   position: relative;
   overflow: hidden;
 
+  @media only screen and (max-width: 900px){
+      padding: 6vw 3vw;
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    }
+
+  @media only screen and (max-width: 600px){
+      padding: 6vw 3vw;
+    }
+
   &__userContainer {
     background-image: linear-gradient(to right bottom, #000342, #3B7BD7);
     color: #fff;
@@ -48,6 +57,14 @@
 
   &__flagContainer {
     padding: 1vw;
+
+    @media only screen and (max-width: 900px){
+        padding: 1.5vw;
+      }
+
+    @media only screen and (max-width: 600px){
+        padding: 2vw;
+      }
 
     img {
       width: 100%;
