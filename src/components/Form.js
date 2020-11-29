@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Form extends Component {
-
   render() {
-    return(
+    return (
       <div className="formContainer">
         <form className="form" onSubmit={this.props.getWeather}>
           <div className="form__title-container">
@@ -11,14 +10,25 @@ export default class Form extends Component {
           </div>
 
           <div className="form__group">
-            <input type="text" name="city" placeholder="City Name" className="form__input" required id="name" onChange={this.props.cityNameHandler}/>
-            <label htmlFor="name" className="form__label">City Name</label>
-        </div>
+            <input
+              type="text"
+              name="city"
+              placeholder="City Name"
+              className="form__input"
+              required
+              id="name"
+              onChange={this.props.cityNameHandler}
+            />
+            <label htmlFor="name" className="form__label">
+              City Name
+            </label>
+          </div>
 
-        <div className="form__group-btn">
-          <button type="submit" className="form__btn form__btn-white">Get weather &rarr;</button>
-        </div>
-
+          <div className="form__group-btn">
+            <button type="submit" className="form__btn form__btn-white">
+              Get weather &rarr;
+            </button>
+          </div>
         </form>
       </div>
     );
