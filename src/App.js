@@ -38,6 +38,7 @@ class App extends Component {
         const iconImageSrc = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
 
         const cityWeather = {
+          id: this.state.citiesWeather.length + 1,
           liveTemperature: Math.round(weatherData.main.temp - 273),
           minTemperature: Math.round(weatherData.main.temp_min - 273),
           maxTemperature: Math.round(weatherData.main.temp_max - 273),
@@ -45,6 +46,8 @@ class App extends Component {
           iconImage: iconImageSrc,
           cityName: weatherData.name,
         };
+
+        console.log(cityWeather.id);
 
         this.setState({
           citiesWeather: [cityWeather, ...this.state.citiesWeather],
@@ -56,7 +59,6 @@ class App extends Component {
         cityNameError: "Please insert the city Name correctly!",
       });
     }
-    this.setState({ city: "" });
   };
 
   // cityNameHandler ##################################
@@ -78,7 +80,7 @@ class App extends Component {
           citiesWeather.map((c) => {
             return (
               <WeatherContainer
-                key={c.liveTemperature}
+                key={c.id}
                 liveTemperature={c.liveTemperature}
                 minTemperature={c.minTemperature}
                 maxTemperature={c.maxTemperature}

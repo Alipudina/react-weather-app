@@ -23,8 +23,6 @@
   }
 }
 
-
-
 .mainContainer {
   padding: 6vw 4vw;
   display: grid;
@@ -33,17 +31,17 @@
   position: relative;
   overflow: hidden;
 
-  @media only screen and (max-width: 900px){
-      padding: 6vw 3vw;
-      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-    }
+  @media only screen and (max-width: 900px) {
+    padding: 6vw 3vw;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  }
 
-  @media only screen and (max-width: 600px){
-      padding: 6vw 3vw;
-    }
+  @media only screen and (max-width: 600px) {
+    padding: 6vw 3vw;
+  }
 
   &__userContainer {
-    background-image: linear-gradient(to right bottom, #000342, #3B7BD7);
+    background-image: linear-gradient(to right bottom, #000342, #3b7bd7);
     color: #fff;
     border-radius: 5px;
     overflow: hidden;
@@ -58,13 +56,13 @@
   &__flagContainer {
     padding: 1vw;
 
-    @media only screen and (max-width: 900px){
-        padding: 1.5vw;
-      }
+    @media only screen and (max-width: 900px) {
+      padding: 1.5vw;
+    }
 
-    @media only screen and (max-width: 600px){
-        padding: 2vw;
-      }
+    @media only screen and (max-width: 600px) {
+      padding: 2vw;
+    }
 
     img {
       width: 100%;
@@ -86,21 +84,21 @@
     grid-column: 1 / -1;
     grid-row: 2 / 3;
     font-size: 4rem;
-    animation: moveToRight 1s ease-out .6s;
+    animation: moveToRight 1s ease-out 0.6s;
     animation-fill-mode: backwards;
   }
 
   &__minTemperature,
   &__maxTemperature {
     font-size: 2.5rem;
-    animation: moveToTop .7s ease-out 1s;
+    animation: moveToTop 0.7s ease-out 1s;
     animation-fill-mode: backwards;
   }
 
   &__iconContainer {
     width: 50%;
     height: 50%;
-    animation: moveToTop .7s ease-out 1s;
+    animation: moveToTop 0.7s ease-out 1s;
     animation-fill-mode: backwards;
 
     img {
@@ -116,6 +114,5 @@
   }
 
   &__maxTemperature {
-
   }
 }
