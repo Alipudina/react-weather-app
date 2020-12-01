@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import "./css/App.css";
+import "./sass/main.css";
 // import Weather from './components/Weather';
 import Form from "./components/Form";
 import WeatherContainer from "./components/WeatherContainer";
+import AlertComponent from "./components/AlertComponent";
 
 const authToken = "bd3be3a2a884168866b96b0f81237152";
 // const url= `https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&APPID=${authToken}`;
@@ -13,6 +14,7 @@ class App extends Component {
   state = {
     city: undefined,
     citiesWeather: [],
+    wrongCity: false,
   };
 
   // get weather #####################
@@ -55,9 +57,7 @@ class App extends Component {
       }
     } catch (e) {
       console.warn(e);
-      this.setState({
-        cityNameError: "Please insert the city Name correctly!",
-      });
+      this.setState({ wrongCity: true });
     }
   };
 
@@ -67,14 +67,21 @@ class App extends Component {
     this.setState({ city });
   };
 
+  // handleWrongCity ################################
+  handleWrongCity = () => {
+    this.setState({ wrongCity: false });
+  };
+
   render() {
-    const { citiesWeather } = this.state;
+    const { citiesWeather, wrongCity } = this.state;
     return (
       <div className="mainContainer" ref="mainContainer">
         <Form
           getWeather={this.getWeather}
           cityNameHandler={this.cityNameHandler}
         />
+
+        {wrongCity && <AlertComponent onWrongCity={this.handleWrongCity} />}
 
         {citiesWeather.length > 0 &&
           citiesWeather.map((c) => {
