@@ -10,6 +10,7 @@ const authToken = "bd3be3a2a884168866b96b0f81237152";
 // iconAddress: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
 // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${authToken}`)
 
+
 class App extends Component {
   state = {
     city: undefined,
@@ -32,12 +33,14 @@ class App extends Component {
       if (this.state.city) {
         // let url= await fetch(`https://restcountries.eu/rest/v2/alpha/${this.state.flag}`);
         let flagUrl = await fetch(
-          `https://restcountries.eu/rest/v2/alpha/${weatherData.sys.country}`
+          `https://restcountries.com/v2/alpha/${weatherData.sys.country}`
         );
         let flagData = await flagUrl.json();
 
         const flagImageSrc = flagData.flag;
         const iconImageSrc = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+
+        // console.log(weatherData.sys.country);
 
         const cityWeather = {
           id: this.state.citiesWeather.length + 1,
@@ -49,7 +52,7 @@ class App extends Component {
           cityName: weatherData.name,
         };
 
-        console.log(cityWeather.id);
+        // console.log(cityWeather.id);
 
         this.setState({
           citiesWeather: [cityWeather, ...this.state.citiesWeather],
